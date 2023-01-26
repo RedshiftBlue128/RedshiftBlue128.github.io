@@ -3,18 +3,38 @@
 		<title>Wakup.Blue</title>
 		<style>
 			img {
+				border-style: none;
 				display: inline-block;
 			}
+			#center-container {
+				display: inline;
+			}
+			#center-text {
+				font-family: sans-serif;
+				position: absolute;
+ 				top: 50%;
+  				left: 50%;
+				width: 400px;
+  				transform: translate(-50%, -25%);
+				color: white;
+				text-shadow:
+    					-1px -1px 0 #000,
+    					1px -1px 0 #000,
+    					-1px 1px 0 #000,
+    					1px 1px 0 #000;  
+			}
+
 		</style>
 	</head>
 	<body align="center" width="100%" style="background-color:black">
-		<img style="border:0" src="sun-tree.png">
-		<img src="tree-ref.png">
+		<img src="sun-tree.png">
+		<img src="tree-sky.png">
 		<img src="sea-dawn.png">
-		<br/>
+		<br>
 		<img src="leaves.png">
-		<div style="display:inline-block;width:400px;height:400px;background-color:white">
-			Hello world!
+		<div id="center-container">
+			<img src="tree-ref.png">
+			<h2 id="center-text"></h2>
 		</div>
 		<img src="lake.png">
 		<br/>
@@ -22,4 +42,13 @@
 		<img src="river.png">
 		<img src="switchback.png">
 	</body>
+	<script>
+		var b = document.getElementById("center-text");
+		b.innerHTML = [
+		"Mathew 6:22<br>The eye is the lamp of the body.<br>So, if your eye is healthy, your whole body will be full of light.",
+		"Mathew 7:24<br>Everyone then who hears these words of mine and does them will be like a wise man who built his house on the rock.",
+		"Isaiah 41:10<br>So do not fear, for I am with you; do not be dismayed, for I am your God. I will strengthen you and help you; I will uphold you with my righteous right hand.",
+		"Philippians 4:6–7<br>Do not be anxious about anything, but in every situation, by prayer and petition, with thanksgiving, present your requests to God. And the peace of God, which transcends all understanding, will guard your hearts and your minds in Christ Jesus."
+		][Math.floor(Math.random()*4)];
+	</script>
 </html>
